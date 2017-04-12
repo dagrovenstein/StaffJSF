@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Staff Information</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <table>
+                <tr>
+                    <td>
+                        <fieldset>
+                            <legion>Staff Information
+                            </legion>
+                            <!-- Use h:panelGrid -->
+                            <h:panelGrid columns="6">
+                                <h:outputLabel value="ID" />
+                                <h:inputText id="idInputText" size ="5"
+                                             value="#{staffInformation.ID}"/>
+                            </h:panelGrid> 
+                            <h:panelGrid columns="6">
+                                <h:outputLabel value="Last Name"/>
+                                <h:inputText id="lastNameInputText" size="12"
+                                             value="#{staffInformation.lastName}"/>
+                                <h:outputLabel value="First Name"/>
+                                <h:inputText id="firstNameInputText" size="12"
+                                             value="#{staffInformation.firstName}"/>
+                                <h:outputLabel value="MI" />
+                                <h:inputText id="miInputText" size="1"
+                                             value="#{staffInformation.mi}"/>
+                            </h:panelGrid> 
+                            <h:panelGrid columns="4">
+                                <h:outputLabel value="Address"/>
+                                <h:inputText id="addressInputText" size="12"
+                                             value="#{staffInformation.address}"/>
+                            </h:panelGrid>
+                            <h:panelGrid columns="6">
+                                <h:outputLabel value="City"/>
+                                <h:inputText id="cityInputText" size="12"
+                                             value="#{staffInformation.city}"/>
+                                <h:outputLabel value="State"/>
+                                <h:inputText id="stateInputText" size ="1"
+                                             value="#{staffInformation.state}"/>
+                            </h:panelGrid>    
+                            <h:panelGrid columns="6">
+                                <h:outputLabel value="Telephone"/>
+                                <h:inputText id="telephoneInputText" size ="12"
+                                             value="#{staffInformation.telephone}"/>
+                            </h:panelGrid> 
+                        </fieldset>
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td>
+                        <!-- Use command button -->
+                        <h:commandButton value="Update"
+                                         action="#{staffInformation.onUpdate()}"/>
+                        <h:commandButton value="View"
+                                         action="#{staffInformation.onView()}"/>
+                        <h:commandButton value="Insert"
+                                         action="#{staffInformation.onInsert()}"/>
+                        <h:commandButton value="Clear"
+                                         action="#{staffInformation.onClear()}"/>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <h:outputText escape="false" style="color:red"
+                          value="#{staffInformation.responseString()}" />
+        </h:form>
+    </h:body>
+</html> 
