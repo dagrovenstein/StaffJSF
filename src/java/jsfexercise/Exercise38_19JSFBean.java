@@ -226,14 +226,12 @@ public class Exercise38_19JSFBean implements Serializable {
 
     private void initializeJdbc() {
         try {
-            // Load the JDBC driver 
             Class.forName("com.mysql.jdbc.Driver");
             System.out.println("Driver loaded");
-            // Establish a connection
+
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/ex37_13?autoreconnect=true", "scott", "tiger");
-            // Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/javabook", "scott", "tiger");
+
             System.out.println("Database connected");
-            // Create a Statement
 
             pstmt = conn.prepareStatement("insert into staff "
                     + "(id, lastName, firstName, mi, address, city, "
